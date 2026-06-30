@@ -1,5 +1,7 @@
 FROM node:18
 
+RUN apt-get update && apt-get upgrade -y
+
 RUN npm install -g npm@9.1.3
 
 ADD package.json .
@@ -10,4 +12,4 @@ RUN npm install
 
 EXPOSE 8080
 
-CMD [ "node", "index.js" ]
+CMD ["node", "index.js"]
